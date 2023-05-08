@@ -16,25 +16,22 @@
 	<main>
 		<div class="container">
 			<div id="carousel">
-				<div v-for="(obj, index) in images" :key="obj.image" class="img-big">
-					<img class="big" :src="obj.image" :alt="obj.title">
+				<div class="img-big">
+					<img :src="currentImage().image" :alt="currentImage().title" class="big">
 					<div class="title">
-						<h1>{{ obj.title }}</h1>
-						<p class="text">{{ obj.text }}</p>
+						<h1>{{ currentImage().title }}</h1>
+						<p>{{ currentImage().text }}</p>
 					</div>
 				</div>
 				<div class="thumbnails">
-					<img class="thumb-img" src="img/01.webp" alt="">
-					<img class="thumb-img" src="img/02.webp" alt="">
-					<img class="thumb-img" src="img/03.webp" alt="">
-					<img class="thumb-img" src="img/04.webp" alt="">
-					<img class="thumb-img" src="img/05.webp" alt="">
-					<i class="bi bi-arrow-left-circle-fill btn btn-left"></i>
-					<i class="bi bi-arrow-right-circle-fill btn btn-right"></i>
+					<img v-for="(image, index) in images" :key="index" :src="image.image" :alt="image.title"
+						class="thumb-img" :class="{ 'inactive': currentImgIndex !== index }"
+						@click="currentImgIndex = index">
+					<i class="bi bi-arrow-left-circle-fill btn btn-left" @click="prevImage"></i>
+					<i class="bi bi-arrow-right-circle-fill btn btn-right" @click="nextImage"></i>
 				</div>
 			</div>
 
-		</div>
 		</div>
 	</main>
 
