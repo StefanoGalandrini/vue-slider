@@ -29,6 +29,7 @@ const app = Vue.createApp({
 				},
 			],
 			currentImgIndex: 0,
+			autoPlayTimer: 0,
 		};
 	},
 
@@ -50,11 +51,18 @@ const app = Vue.createApp({
 				this.currentImgIndex++;
 			}
 		},
-	},
-	created: {
-		autoPlay() {
-			setInterval(play() => {}, 3000);
+		startAutoPlay() {
+			this.autoPlayTimer = setInterval(() => {
+				this.nextImage();
+			}, 2000);
 		},
+		stopAutoPlay() {
+			clearInterval(this.autoPlayTimer);
+		},
+	},
+
+	created() {
+		this.startAutoPlay();
 	},
 });
 
