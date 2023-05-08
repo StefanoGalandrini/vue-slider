@@ -16,11 +16,11 @@
 	<main>
 		<div class="container">
 			<div id="carousel">
-				<div class="img-big">
-					<img class="big" src="img/01.webp" alt="">
+				<div v-for="(obj, index) in images" :key="obj.image" class="img-big">
+					<img class="big" :src="obj.image" :alt="obj.title">
 					<div class="title">
-						<h1></h1>
-						<p class="text"></p>
+						<h1>{{ obj.title }}</h1>
+						<p class="text">{{ obj.text }}</p>
 					</div>
 				</div>
 				<div class="thumbnails">

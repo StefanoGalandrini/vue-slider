@@ -1,5 +1,5 @@
 const app = Vue.createApp({
-	data: () {
+	data() {
 		return {
 			images: [
 				{
@@ -29,8 +29,7 @@ const app = Vue.createApp({
 				},
 			],
 		};
-	}
-	
+	},
 });
 
-app.mount("#container");
+app.mount("#carousel");
