@@ -54,7 +54,7 @@ const app = Vue.createApp({
 		startAutoPlay() {
 			this.autoPlayTimer = setInterval(() => {
 				this.nextImage();
-			}, 2000);
+			}, 3000);
 		},
 		stopAutoPlay() {
 			clearInterval(this.autoPlayTimer);
