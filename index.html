@@ -25,13 +25,12 @@
 				</div>
 				<div class="thumbnails">
 					<img v-for="(image, index) in images" :key="index" :src="image.image" :alt="image.title"
-						class="thumb-img" :class="{ 'inactive': currentImgIndex !== index }"
+						class="thumb-img" :class="{inactive: currentImgIndex !== index }"
 						@click="currentImgIndex = index">
 					<i class="bi bi-arrow-left-circle-fill btn btn-left" @click="prevImage"></i>
 					<i class="bi bi-arrow-right-circle-fill btn btn-right" @click="nextImage"></i>
 				</div>
 			</div>
-
 		</div>
 	</main>
 
