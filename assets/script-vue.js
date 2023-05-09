@@ -60,6 +60,9 @@ const app = Vue.createApp({
 			clearInterval(this.autoPlayId);
 		},
 	},
+	mounted() {
+		this.startAutoPlay();
+	},
 });
 
 app.mount("#carousel");
